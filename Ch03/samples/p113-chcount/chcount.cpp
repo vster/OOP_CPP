@@ -1,0 +1,26 @@
+// chcount.cpp
+// подсчет числа слов и символов в строке
+#include <iostream>
+using namespace std;
+#include <conio.h>           // для getche()
+
+int main()
+{
+	int chcount = 0;           	// число непробельных символов
+	int wdcount = 1;           	// число пробелов
+	char ch = 'a';             	// ch должна иметь определенное значение
+  
+	cout << "Enter string: ";
+	while(ch != '\r' )        	// цикл, пока не будет нажата клавиша Enter 
+	{
+		ch = getche();          // считывание символа
+		if( ch == ' ' )         // если символ является пробелом,
+			wdcount++;          // то инкрементируем число слов
+		else                    // в противном случае
+		chcount++;             	// инкрементируем число символов
+	}                          	// вывод результатов на экран
+	cout << "\nWords: " << wdcount << endl
+		 << "Letters: " << (chcount-1)<< endl;
+	return 0;
+}
+

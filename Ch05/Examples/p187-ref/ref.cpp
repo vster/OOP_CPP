@@ -1,0 +1,30 @@
+// ref.cpp
+// применение ссылочного механизма передачи аргументов
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	void intfrac(float, float&, float&);      // прототип
+	float number, intpart, fracpart;
+	do {
+		cout << "\nEnter real number:";
+		cin >> number;                          // ввод числа пользователем
+		intfrac(number, intpart, fracpart);		// нахождение целой и дробной части
+		cout << "Integer part is " << intpart	// вывод результатов
+		<< ", fractional part is " << fracpart << endl;
+	} while(number != 0.0f );						//выход из цикла, если введен ноль
+	return 0;
+}
+
+//--------------------------------------------------------
+// функция intfrac()
+// вычисляет целую и дробную часть вещественного числа
+void intfrac(float n, float& intp, float& fracp)
+{
+	long temp = static_cast<long>(n);			// преобразование к типу long,
+	intp = static_cast<float>(temp);			// и обратно во float
+	fracp = n - intp;							// вычитаем целую часть
+}
+
+

@@ -1,0 +1,98 @@
+// linklist.cpp
+// список
+#include <iostream>
+using namespace std;
+///////////////////////////////////////////////////////////
+struct link   // один элемент списка
+{
+  int data;   // некоторые данные
+  link* next; // указатель на следующую структуру
+};
+///////////////////////////////////////////////////////////
+class linklist // список
+{
+  private:
+    link* first;
+  public:
+    linklist ( )            // конструктор без параметров
+      { first = NULL; }     // первого элемента пока нет
+    void additem ( int d ); // добавление элемента
+    void display ( );       // показ данных
+	void operator = ( linklist& ); 
+	~linklist ( );
+};
+///////////////////////////////////////////////////////////
+void linklist::additem ( int d ) // добавление элемента
+{
+  link* newlink = new link;      // выделяем память
+
+  newlink->data = d;             // запоминаем данные
+  newlink->next = first;         // запоминаем значение first
+  cout << "Create " << newlink << endl;
+  first = newlink;               // first теперь указывает на новый элемент
+}
+///////////////////////////////////////////////////////////
+void linklist::display ( )
+{
+  link* current = first;           // начинаем с первого элемента
+  while( current )                 // пока есть данные
+  {
+    cout << current->data << endl; // печатаем данные
+    current = current->next;       // двигаемся к следующему элементу
+  }
+}
+///////////////////////////////////////////////////////////
+void linklist::operator =( linklist& ll )
+{
+
+
+}
+
+///////////////////////////////////////////////////////////
+linklist::~linklist()
+{
+	link*current = first;
+	while(current != NULL)
+	{
+		cout << "Destruct " << current << endl;
+		link*temp = current;
+		current = current->next;
+		delete temp;
+	}
+}
+
+///////////////////////////////////////////////////////////
+int main ( )
+{
+  linklist li;       // создаем переменную-список
+
+  li.additem ( 25 ); // добавляем туда несколько чисел
+  li.additem ( 36 );
+  li.additem ( 49 );
+  li.additem ( 64 );
+
+  li.display ( );    // показываем список
+
+
+  linklist list1;       // создаем переменную-список
+
+  list1.additem ( 15 ); // добавляем туда несколько чисел
+  list1.additem ( 25 );
+  list1.additem ( 35 );
+  list1.additem ( 45 );
+
+  list1.display ( );    // показываем список
+
+  linklist list2;
+  list2 = list1;
+
+  list2.display ( );    // показываем список
+	
+//  list1.~linklist();
+
+  list2.display ( );    // показываем список
+
+  return 0;
+}
+
+

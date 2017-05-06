@@ -1,0 +1,10 @@
+//////////////////////////////////////////////////////////
+struct Distance                   // длина в английской системе
+{
+	int feet;
+	float inches;
+};
+
+//////////////////////////////////////////////////////////
+Distance bigengl( Distance, Distance ); // прототипы
+void engldisp(Distance);

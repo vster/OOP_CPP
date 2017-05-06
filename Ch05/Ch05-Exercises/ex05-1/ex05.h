@@ -1,0 +1,1 @@
+long hms_to_sec(int hours, int minutes, int seconds);
