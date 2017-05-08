@@ -4,5 +4,5 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-    first.cpp
+    mixed.cpp
 
