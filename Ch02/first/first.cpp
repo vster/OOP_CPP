@@ -1,8 +1,8 @@
 #include <iostream>
-//using namespace std;
+using namespace std;
 int main()
 {
-	std::cout << "Each epoque has its own language\n";
+    cout << "Each epoque has its own language\n";
 	return 0;
 }
 	
