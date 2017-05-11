@@ -2,7 +2,7 @@
 // применение цикла if для определения простых чисел
 #include <iostream>
 using namespace std;
-#include <process.h>         //для exit()
+#include <unistd.h>         //для exit()
 
 int main()
 {
