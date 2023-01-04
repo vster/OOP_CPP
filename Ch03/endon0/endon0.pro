@@ -5,8 +5,3 @@ CONFIG -= qt
 
 SOURCES += \
     endon0.cpp
-
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
