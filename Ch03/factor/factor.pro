@@ -4,6 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+<<<<<<< HEAD
     factor.cpp
 
+=======
+   factor.cpp
+>>>>>>> 53cbcf7 (modif)
 

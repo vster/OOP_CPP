@@ -4,4 +4,9 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+<<<<<<< HEAD
     divdo.cpp
+=======
+   divdo.cpp
+
+>>>>>>> 53cbcf7 (modif)
